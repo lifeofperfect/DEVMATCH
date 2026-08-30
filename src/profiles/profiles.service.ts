@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import type { Profile } from './entities/profile.entity.js';
 import type { CreateProfileDto } from './dto/create-profile.dto.js';
@@ -93,6 +93,8 @@ export class ProfilesService {
 
         if(matchingProfile > -1){
             this.profiles.splice(matchingProfile, 1)
+        }else{
+            throw new NotFoundException(`Profile with id ${id} not found`)
         }
     }
 }

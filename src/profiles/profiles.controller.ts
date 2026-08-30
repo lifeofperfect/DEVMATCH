@@ -38,7 +38,7 @@ export class ProfilesController {
     @Delete(':id')
     @HttpCode(HttpStatus.NO_CONTENT)
     remove(@Param('id') id:string):void{
-         this.profileService.remove(id);
+        this.profileService.remove(id);
     }
 
 }
