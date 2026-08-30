@@ -62,7 +62,7 @@ export class ProfilesService {
     }
 
     findOne(id:string):Profile | undefined {
-        return this.profiles.find((x):boolean=> x.id === id);
+        return this.profiles.find((x):boolean=> x.id.toString() === id);
     }
 
     create(createProfile:CreateProfileDto):Profile {
